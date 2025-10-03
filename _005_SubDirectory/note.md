@@ -2,3 +2,4 @@
 #### 005 append subdirectory
     ADD_SUBDIRECTORY(src_dir [bin_dir]
                     [EXCLUDE_FROM_ALL])
+    tips: bin_dir default: src_dir

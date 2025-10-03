@@ -1,0 +1,4 @@
+
+#### 006 Output path
+    EXECUTABLE_OUTPUT_PATH
+    LIBRARY_OUTPUT_PATH
