@@ -1,0 +1,73 @@
+
+#### 007 Customize Install
+
+- bin(such as static_lib, dynamic_lib, elf)
+
+    INSTALL(TARGETS targets... [[ARCHIVE|LIBRARY|RUNTIME]
+        [DESTINATION <dir>] [PERMISSIONS permissions...]
+        [CONFIGURATIONS [Debug|Release|...]]
+        [COMPOMENT <component>] [OPTIONAL]] [...])
+
+    ARCHIVE|LIBRARY|RUNTIME: static lib, dynamic lib, elf.
+    DESTINATION <dir>: The intallation path is ${CMAKE_INSTALL_PREFIX}/DESTINATION
+    PERMISSIONS: permisson
+    Debug|Release: version
+
+    For instance:
+
+    INSTALL(TARGETS exe sharedlib staticlib
+        RUNTIME DESTINATION bin                 
+        LIBRARY DESTINATION lib
+        ARCHIVE DESTINATION static_lib
+    )
+    install exe in ${CMAKE_INSTALL_PREFIX}/bin
+    install sharedlib in ${CMAKE_INSTALL_PREFIX}/lib
+    install staticlib in ${CMAKE_INSTALL_PREFIX}/static_lib
+    
+
+- file
+
+    INSTALL(FILES files... DESTINATION <dir>
+        [PERMISSIONS permissions...]
+        [CONFIGURATIONS [Debug|Release|...]]
+        [COMPONENT <component>]
+        [RENAME <name>] [OPTIONAL]
+    )
+
+    Default PERMISSIONS: OWNER_WRITE OWNER_READ | GROUP_READ | WORLD_READ (644)
+
+- program(such as bash)
+
+    INSTALL(PROGRAMS files... DESTINATION <dir>
+        [PERMISSIONS permissions...]
+        [CONFIGURATIONS [Debug|Release|...]]
+        [COMPONENT <component>]
+        [RENAME <name>]
+        [OPTIONAL]
+    )
+
+    Default PERMISSIONS: OWNER_EXECUTE OWNER_WRITE OWNER_READ | GROUP_EXECUTE GROUP_READ | WORLD_EXECUTE WORLD_READ (755)
+
+- directory
+
+    INSTALL(DIRECTORY dirs... DESTINATION <dir>
+        [FILE_PERMISSIONS permissions...]
+        [DIRECTORY_PERMISSIONS permissions...]
+        [USE_SOURCE_PERMISSIONS]
+        [CONFIGURATIONS [Debug|Release|...]]
+        [COMPONENT <component>]
+        [[PATTERN <pattern> | REGEX <regex>]
+         [EXCLUDE] [PERMISSIONS permissions...]]
+        [...]
+    )
+
+    DIRECTORY: relative src path
+    PATTERN: regular expression filter
+
+- cmake script
+
+    INSTALL([[SCRIPT <file>] [CODE <code>]] [...])
+
+    SCRIPT: call .cmake script when installing
+    CODE: execute cmake instruction, such as
+        INSTALL(CODE "MESSAGE(\"Sample install message.\")")
