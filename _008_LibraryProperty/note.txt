@@ -1,0 +1,8 @@
+
+#### 008 Linrary Property
+
+SET_TARGET_PROPERTIES(target1 target2 ...
+                    PROPERTIES prop1 value1 prop2 value2 ...)
+    prop: OUTPUT_NAME, VERSION, SOVERSION...
+
+GET_TARGET_PROPERTY(VAR target prop)
