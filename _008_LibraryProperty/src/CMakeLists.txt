@@ -18,7 +18,7 @@ set_target_properties(linear PROPERTIES VERSION 1.0 SOVERSION 1)
 
 # set install path
 install(TARGETS linear static_linear 
-        LIBRARY DESTINATION lib 
+        LIBRARY DESTINATION lib/${PROJECT_NAME}
         ARCHIVE DESTINATION lib/${PROJECT_NAME})
 install(FILES linear.h DESTINATION include/${PROJECT_NAME})
 
