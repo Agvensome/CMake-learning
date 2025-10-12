@@ -1,0 +1,6 @@
+
+#### 011 Minimum Required
+
+cmake_minimum_required(VERSION <min>[...<max>] [FATAL_ERROR])
+
+    <min>/<max>: major.minor[.patch[.tweak]]
