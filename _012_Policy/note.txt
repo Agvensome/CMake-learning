@@ -1,0 +1,17 @@
+
+#### 012 Policy
+
+cmake_policy(VERSION <min>[...<max>])
+
+    it is being called when cmake_minimum_required running.
+
+# set policy
+cmake_policy(SET CMP<NNNN> NEW)
+cmake_policy(SET CMP<NNNN> OLD) # not commemded
+
+# get policy
+cmake_policy(GET CMP<NNNN> <var>)
+
+# policy stack
+cmake_policy(PUSH)
+cmake_policy(POP)
