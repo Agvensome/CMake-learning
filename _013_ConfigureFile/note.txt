@@ -1,0 +1,7 @@
+
+#### 013 ConfigureFile
+
+# copy input file to output path, and modify specified content.
+configure_file(<input> <output>
+                [COPYONLY] [ESCAPE_QUOTES] [@ONLY]
+                [NEWLINE_STYLE [UNIX|DOS|WIN32|LF|CRLF] ])
